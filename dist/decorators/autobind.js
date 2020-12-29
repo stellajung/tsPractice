@@ -1,8 +1,7 @@
-
 //autobind decorator
-export function autobind(target: any, methodName: string, descriptor: PropertyDescriptor) {
+export function autobind(target, methodName, descriptor) {
     const originalMethod = descriptor.value;
-    const adjDescriptor: PropertyDescriptor = {
+    const adjDescriptor = {
         configurable: true,
         get() {
             const boundFn = originalMethod.bind(this);
